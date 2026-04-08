@@ -272,13 +272,20 @@ footer {
   margin-right: auto;
 }
 
-/* Vista desde cels */
+/* Vista para Cels*/
 @media (max-width: 768px) {
 
-  /* Navbar se pone vertical */
+  /* Navbar apilada ordenada */
   .navbar {
     flex-direction: column;
-    padding: 0.5rem 1rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+  }
+
+  .navbar .marca {
+    padding: 0.8rem 1rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
   }
 
   .navbar ul {
@@ -286,31 +293,36 @@ footer {
     width: 100%;
   }
 
-  .navbar ul li a {
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+  .navbar ul li {
+    width: 100%;
   }
 
-  /* Hero más pequeño */
+  .navbar ul li a {
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom-width: 1px !important;
+  }
+
+  /* Hero */
   .hero {
     padding: 2rem 1rem;
   }
 
   .hero img {
-    width: 160px !important;
-    height: 210px !important;
+    width: 150px !important;
+    height: 200px !important;
   }
 
   .hero h1 {
     font-size: 1.4rem;
   }
 
-  /* Contenedor sin tanto espacio */
+  /* Contenedor */
   .contenedor {
     padding: 1.5rem 1rem;
   }
 
-  /* Foto de datos debajo del texto */
+  /* Foto datos */
   .fila-foto {
     flex-direction: column;
   }
@@ -320,7 +332,7 @@ footer {
     height: 220px;
   }
 
-  /* Referencias en una sola columna */
+  /* Referencias */
   .ref-grid {
     grid-template-columns: 1fr;
   }
