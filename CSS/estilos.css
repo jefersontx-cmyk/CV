@@ -338,4 +338,13 @@ footer {
     grid-template-columns: 1fr;
   }
 
+   .dato {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .dato .etiqueta {
+    min-width: unset;
+  }
+
 }
