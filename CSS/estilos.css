@@ -1,0 +1,273 @@
+/* VARIABLES GLOBALES */
+:root {
+  --rojo:       #ef4444;
+  --verde:       #25ce209f;
+  --azul-claro: #3b82f6;
+  --fondo:      #3c59750a;
+  --blanco:     #ffffff9c;
+  --gris-borde: #e2e8f0;
+  --gris-texto: #64748b;
+  --negro:      #1e293b;
+  --fuente: 'Segoe UI', Arial, sans-serif;
+}
+
+/* BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente);
+  background-color: var(--fondo);
+  color: var(--negro);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--verde);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.navbar .marca {
+  color: rgb(0, 0, 0);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1rem 0;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar ul li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 1rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+  border-bottom: 3px solid transparent;
+}
+
+/* Efecto hover */
+.navbar ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: rgb(0, 0, 0);
+  border-bottom: 3px solid white;
+}
+
+/* HERO (solo index.html) */
+.hero {
+  background: linear-gradient(135deg, var(--verde) 0%, #d3d3d3 100%);
+  color: rgba(0, 0, 0, 0.562);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero img {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* TÍTULOS DE SECCIÓN */
+.titulo-pagina {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--verde);
+  border-left: 4px solid var(--verde);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* TARJETA (card) */
+.card {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.card p {
+  color: var(--gris-texto);
+  margin-bottom: 0.6rem;
+}
+
+/* DATOS PERSONALES */
+.dato {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--gris-borde);
+  font-size: 0.97rem;
+}
+
+.dato:last-child {
+  border-bottom: none;
+}
+
+.dato .etiqueta {
+  font-weight: 600;
+  color: var(--verde);
+  min-width: 180px;
+}
+
+.dato .valor {
+  color: var(--negro);
+}
+
+/* FOTO LATERAL */
+.fila-foto {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.fila-foto img {
+  width: 40%;
+  height: 20%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--gris-borde);
+  flex-shrink: 0;
+}
+
+/* LISTA EDUCACIÓN / TRABAJOS */
+.lista-items {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-items li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--gris-borde);
+  color: var(--negro);
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.lista-items li:last-child {
+  border-bottom: none;
+}
+
+.lista-items li::before {
+  content: "▸";
+  color: var(--verde);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* REFERENCIA CARD */
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.ref-card {
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-top: 4px solid var(--verde);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.ref-card h3 {
+  font-size: 1rem;
+  color: var(--verde);
+  margin-bottom: 0.3rem;
+}
+
+.ref-card p {
+  font-size: 0.88rem;
+  color: var(--gris-texto);
+  margin-bottom: 0.3rem;
+}
+
+/* AUDIO Y VIDEO */
+audio, video {
+  display: block;
+  margin: 1.2rem auto;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* BOTÓN VOLVER */
+.volver {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--azul);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.volver:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: var(--gris-texto);
+  border-top: 1px solid var(--gris-borde);
+  margin-top: 3rem;
+}
+
+/* IMAGEN ESCUELA */
+.img-escuela {
+  width: 220px;
+  border-radius: 8px;
+  border: 2px solid var(--gris-borde);
+  margin-top: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
