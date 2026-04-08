@@ -239,7 +239,7 @@ audio, video {
 .volver {
   display: inline-block;
   margin-top: 2rem;
-  color: var(--azul);
+  color: var(--verde);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
