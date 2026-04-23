@@ -1,27 +1,29 @@
-/* VARIABLES GLOBALES */
+/* Aquí defino mis colores y fuente principal para usarlos en todo el sitio */
 :root {
   --rojo:       #ef4444;
-  --verde:       #25ce209f;
+  --verde:      #25ce20;
   --azul-claro: #3b82f6;
-  --fondo:      #3c59750a;
-  --blanco:     #ffffff9c;
+  --fondo:      #f0f9f0;
+  --blanco:     #ffffff;
   --gris-borde: #e2e8f0;
   --gris-texto: #64748b;
   --negro:      #1e293b;
   --fuente: 'Segoe UI', Arial, sans-serif;
 }
 
-/* BASE */
+/* Aquí reseteo los estilos por defecto del navegador para empezar limpio */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Aquí le digo al navegador que haga scroll suave al navegar entre secciones */
 html {
   scroll-behavior: smooth;
 }
 
+/* Aquí defino el estilo base de mi página: fuente, fondo y color de texto */
 body {
   font-family: var(--fuente);
   background-color: var(--fondo);
@@ -30,7 +32,59 @@ body {
   line-height: 1.7;
 }
 
-/* NAVBAR */
+/* Aquí oculto el checkbox que uso como motor del menú hamburguesa */
+#menu-toggle {
+  display: none;
+}
+
+/* Aquí oculto el botón hamburguesa en escritorio porque solo lo necesito en celular */
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
+  color: black;
+  user-select: none;
+}
+
+/* Aquí oculto el panel lateral por defecto */
+.menu-panel {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  width: 260px;
+  background-color: var(--verde);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 999;
+  padding-top: 3rem;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+}
+
+/* Aquí muestro el panel lateral cuando el checkbox está marcado */
+#menu-toggle:checked ~ .menu-panel {
+  display: flex;
+}
+
+/* Aquí estilo los links del panel lateral */
+.menu-panel li a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.menu-panel li a:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+/* Aquí diseño mi barra de navegación principal con fondo verde y posición fija arriba */
 .navbar {
   background-color: var(--verde);
   padding: 0 2rem;
@@ -43,6 +97,7 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
+/* Aquí estilo mi nombre/marca que aparece a la izquierda de la navbar */
 .navbar .marca {
   color: rgb(0, 0, 0);
   font-size: 1.1rem;
@@ -52,13 +107,15 @@ body {
   letter-spacing: 1px;
 }
 
-.navbar ul {
+/* Aquí pongo mis links del menú en fila horizontal para escritorio */
+.menu-escritorio {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
 }
 
-.navbar ul li a {
+/* Aquí estilo cada link individual del menú de escritorio */
+.menu-escritorio li a {
   display: block;
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -69,14 +126,14 @@ body {
   border-bottom: 3px solid transparent;
 }
 
-/* Efecto hover */
-.navbar ul li a:hover {
+/* Aquí defino qué pasa cuando paso el mouse encima de un link */
+.menu-escritorio li a:hover {
   background-color: rgba(0, 0, 0, 0.15);
   color: rgb(0, 0, 0);
   border-bottom: 3px solid white;
 }
 
-/* HERO (solo index.html) */
+/* Aquí diseño mi sección principal con foto y nombre, solo para el index */
 .hero {
   background: linear-gradient(135deg, var(--verde) 0%, #d3d3d3 100%);
   color: rgba(0, 0, 0, 0.562);
@@ -84,30 +141,33 @@ body {
   text-align: center;
 }
 
+/* Aquí centro mi foto de perfil */
 .hero img {
   display: block;
   margin: 0 auto 1.5rem auto;
 }
 
+/* Aquí estilo mi nombre principal en el hero */
 .hero h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
+/* Aquí estilo el texto secundario del hero */
 .hero p {
   font-size: 1rem;
   opacity: 0.85;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* Aquí creo el contenedor que centra y limita el ancho de mi contenido */
 .contenedor {
   max-width: 860px;
   margin: 0 auto;
   padding: 3rem 2rem;
 }
 
-/* TÍTULOS DE SECCIÓN */
+/* Aquí estilo los títulos de cada sección de mi CV */
 .titulo-pagina {
   font-size: 1.6rem;
   font-weight: 700;
@@ -117,7 +177,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* TARJETA (card) */
+/* Aquí diseño las tarjetas blancas que envuelven mi contenido */
 .card {
   background-color: var(--blanco);
   border: 1px solid var(--gris-borde);
@@ -127,12 +187,13 @@ body {
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
+/* Aquí estilo cada párrafo dentro de mis tarjetas */
 .card p {
   color: var(--gris-texto);
   margin-bottom: 0.6rem;
 }
 
-/* DATOS PERSONALES */
+/* Aquí estilo cada fila de mis datos personales */
 .dato {
   display: flex;
   gap: 0.5rem;
@@ -145,17 +206,19 @@ body {
   border-bottom: none;
 }
 
+/* Aquí estilo las etiquetas como "Nombre:", "Teléfono:", etc. */
 .dato .etiqueta {
   font-weight: 600;
   color: var(--verde);
   min-width: 180px;
 }
 
+/* Aquí estilo el valor de cada dato personal */
 .dato .valor {
   color: var(--negro);
 }
 
-/* FOTO LATERAL */
+/* Aquí acomodo mi foto al lado de mis datos personales */
 .fila-foto {
   display: flex;
   gap: 2rem;
@@ -163,21 +226,22 @@ body {
   flex-wrap: wrap;
 }
 
+/* Aquí defino el tamaño de mi foto en la sección de datos */
 .fila-foto img {
   width: 40%;
-  height: 20%;
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid var(--gris-borde);
   flex-shrink: 0;
 }
 
-/* LISTA EDUCACIÓN / TRABAJOS */
+/* Aquí estilo mi lista de estudios y trabajos sin puntos */
 .lista-items {
   list-style: none;
   padding: 0;
 }
 
+/* Aquí estilo cada elemento individual de mis listas */
 .lista-items li {
   padding: 0.7rem 0;
   border-bottom: 1px solid var(--gris-borde);
@@ -191,6 +255,7 @@ body {
   border-bottom: none;
 }
 
+/* Aquí agrego la flecha antes de cada elemento de mis listas */
 .lista-items li::before {
   content: "▸";
   color: var(--verde);
@@ -199,13 +264,14 @@ body {
   margin-top: 0.1rem;
 }
 
-/* REFERENCIA CARD */
+/* Aquí creo la cuadrícula para mostrar mis referencias en columnas */
 .ref-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.2rem;
 }
 
+/* Aquí diseño cada tarjeta de referencia personal */
 .ref-card {
   background: var(--blanco);
   border: 1px solid var(--gris-borde);
@@ -215,19 +281,21 @@ body {
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
+/* Aquí estilo el nombre de cada referencia */
 .ref-card h3 {
   font-size: 1rem;
   color: var(--verde);
   margin-bottom: 0.3rem;
 }
 
+/* Aquí estilo el texto dentro de cada tarjeta de referencia */
 .ref-card p {
   font-size: 0.88rem;
   color: var(--gris-texto);
   margin-bottom: 0.3rem;
 }
 
-/* AUDIO Y VIDEO */
+/* Aquí centro y limito el tamaño de mis audios y videos */
 audio, video {
   display: block;
   margin: 1.2rem auto;
@@ -235,7 +303,7 @@ audio, video {
   max-width: 100%;
 }
 
-/* BOTÓN VOLVER */
+/* Aquí estilo el botón que me lleva de vuelta al inicio */
 .volver {
   display: inline-block;
   margin-top: 2rem;
@@ -251,7 +319,7 @@ audio, video {
   text-decoration: underline;
 }
 
-/* FOOTER */
+/* Aquí estilo el pie de página con mi nombre y año */
 footer {
   text-align: center;
   padding: 2rem;
@@ -261,7 +329,7 @@ footer {
   margin-top: 3rem;
 }
 
-/* IMAGEN ESCUELA */
+/* Aquí estilo la foto de mi instituto */
 .img-escuela {
   width: 220px;
   border-radius: 8px;
@@ -272,43 +340,30 @@ footer {
   margin-right: auto;
 }
 
-/* Vista para Cels*/
+/* Aquí defino todos los cambios para que mi sitio se vea bien en celulares */
 @media (max-width: 768px) {
 
-  /* Navbar apilada ordenada */
+  /* Aquí muestro el botón hamburguesa solo en celular */
+  .menu-btn {
+    display: block;
+  }
+
+  /* Aquí oculto el menú de escritorio en celular */
+  .menu-escritorio {
+    display: none;
+  }
+
+  /* Aquí ajusto mi navbar para celular */
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5rem 0;
-    position: static;
+    padding: 0 1rem;
   }
 
-  .navbar .marca {
-    padding: 0.8rem 1rem;
-    width: 100%;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar ul li {
-    width: 100%;
-  }
-
-  .navbar ul li a {
-    padding: 0.8rem 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    border-bottom-width: 1px !important;
-  }
-
-  /* Hero */
+  /* Aquí reduzco el espacio del hero en celular */
   .hero {
     padding: 2rem 1rem;
   }
 
+  /* Aquí ajusto el tamaño de mi foto de perfil en celular */
   .hero img {
     width: 150px !important;
     height: 200px !important;
@@ -318,12 +373,12 @@ footer {
     font-size: 1.4rem;
   }
 
-  /* Contenedor */
+  /* Aquí reduzco el padding del contenedor en celular */
   .contenedor {
     padding: 1.5rem 1rem;
   }
 
-  /* Foto datos */
+  /* Aquí apilo la foto debajo del texto en celular */
   .fila-foto {
     flex-direction: column;
   }
@@ -333,12 +388,13 @@ footer {
     height: 220px;
   }
 
-  /* Referencias */
+  /* Aquí pongo mis referencias en una sola columna en celular */
   .ref-grid {
     grid-template-columns: 1fr;
   }
 
-   .dato {
+  /* Aquí apilo mis datos personales en celular para que se lean mejor */
+  .dato {
     flex-direction: column;
     gap: 0.2rem;
   }
